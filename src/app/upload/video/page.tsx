@@ -9,7 +9,14 @@ const UploadVideoPage = () => {
     const video = Array.from(files)[0];
 
     if (video) {
+      // 10 Megabytes in Bytes
+      const maxFileSize = 10485760;
+      if (video.size > maxFileSize) {
+        return toast.error("Max video size allowed is 10 MB!");
+      }
+
       const loadingToast = toast.loading("Uploading video");
+
       try {
         const result = await new Promise((resolve, reject) => setTimeout(() => {
           // return reject("Something went wrong. Try again later!");
