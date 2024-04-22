@@ -4,7 +4,7 @@ import { toast } from 'sonner';
 type ValidFormats = 'jpg' | 'png' | 'mp4' | 'webm';
 
 interface BaseProps {
-  onUpload: (files: FileList) => void;
+  onFilesAdded: (files: FileList) => void;
   children: ReactNode;
   formats?: ValidFormats[];
   multiple?: boolean;
@@ -22,7 +22,7 @@ interface PropsWithTrueOrUndefinedMultiple extends BaseProps {
 
 type FileDragAndDropProps = PropsWithTrueOrUndefinedMultiple | PropsWithFalseMultiple
 
-const FileDragAndDrop = ({ onUpload, children, formats = ['webm', 'mp4'], multiple = false, invalidFormatMessage, ...rest }: FileDragAndDropProps) => {
+const FileDragAndDrop = ({ onFilesAdded, children, formats = ['webm', 'mp4'], multiple = false, invalidFormatMessage, ...rest }: FileDragAndDropProps) => {
   const [dragActive, setDragActive] = useState(false);
 
   const validateFormat = useCallback((files: FileList) => {
@@ -48,10 +48,10 @@ const FileDragAndDrop = ({ onUpload, children, formats = ['webm', 'mp4'], multip
       }
 
       if (files && files.length) {
-        onUpload(files);
+        onFilesAdded(files);
       }
     }
-  }, [invalidFormatMessage, multiple, onUpload, rest, validateFormat]);
+  }, [invalidFormatMessage, multiple, onFilesAdded, rest, validateFormat]);
 
   const handleDrop = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault();
