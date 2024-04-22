@@ -43,12 +43,11 @@ const FileDragAndDrop = ({ onFilesAdded, children, formats = ["webm", "mp4"], mu
       }
 
       if (validateFormat(files)) {
-        toast.error(invalidFormatMessage || "Invalid format");
-        return;
+        return toast.error(invalidFormatMessage || "Invalid format");
       }
 
       if (files && files.length) {
-        onFilesAdded(files);
+        return onFilesAdded(files);
       }
     }
   }, [invalidFormatMessage, multiple, onFilesAdded, rest, validateFormat]);
