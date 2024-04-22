@@ -37,7 +37,11 @@ const UploadVideoPage = () => {
         Upload Video
       </h1>
       <FileDragAndDrop
-        onUpload={uploadVideo}>
+        multiple={false}
+        noMultipleErrorMessage="Only one video can be uploaded at a time!"
+        onUpload={uploadVideo}
+        formats={['webm']}
+        invalidFormatMessage='Only .webm files are allowed!'>
         <div className="flex flex-col items-center justify-center text-2xl bg-[rgb(206,208,210)] rounded-3xl p-10 gap-6 cursor-pointer">
           <div className="w-24 h-24 bg-black flex items-center justify-center rounded-full">
             <div className="w-9 h-9 bg-[rgb(206,208,210)] rounded-full"></div>
