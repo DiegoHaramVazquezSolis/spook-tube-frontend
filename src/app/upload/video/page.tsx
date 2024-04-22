@@ -2,7 +2,7 @@
 import React from 'react';
 import { toast } from 'sonner';
 
-import FileDragAndDrop from '@/components/FileDragAndDrop';
+import { FileDragAndDrop } from '@/components/FileDragAndDrop';
 
 const UploadVideoPage = () => {
   const uploadVideo = async (files: FileList) => {

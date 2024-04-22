@@ -103,4 +103,6 @@ const FileDragAndDrop = ({ onFilesAdded, children, formats = ['webm', 'mp4'], mu
   );
 };
 
-export default FileDragAndDrop;
+export {
+  FileDragAndDrop
+};
