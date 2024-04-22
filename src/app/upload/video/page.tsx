@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { FileDragAndDrop } from "@/components/FileDragAndDrop";
 
 const UploadVideoPage = () => {
-  const uploadVideo = async (files: FileList) => {
+  const handleAddedFile = async (files: FileList) => {
     const video = Array.from(files)[0];
 
     if (video) {
@@ -46,7 +46,7 @@ const UploadVideoPage = () => {
       <FileDragAndDrop
         multiple={false}
         noMultipleErrorMessage="Only one video can be uploaded at a time!"
-        onFilesAdded={uploadVideo}
+        onFilesAdded={handleAddedFile}
         formats={["webm"]}
         invalidFormatMessage="Only .webm files are allowed!">
         <div className="flex flex-col items-center justify-center text-2xl bg-[rgb(206,208,210)] rounded-3xl p-10 gap-6 cursor-pointer">
