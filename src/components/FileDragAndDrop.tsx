@@ -80,7 +80,8 @@ const FileDragAndDrop = ({ onFilesAdded, children, formats = ["webm", "mp4"], mu
     <div
       onDrop={handleDrop}
       onDragEnter={handleDrag}
-      className={`relative ${dragActive ? "opacity-50" : ""}`}>
+      className={`relative ${dragActive ? "opacity-50" : ""}`}
+      data-testid="drop-area">
       <label htmlFor="uploadFile">
         {children}
         <input
@@ -88,7 +89,8 @@ const FileDragAndDrop = ({ onFilesAdded, children, formats = ["webm", "mp4"], mu
           className="hidden"
           id="uploadFile"
           onChange={handleFileChange}
-          multiple={multiple} />
+          multiple={multiple}
+          aria-label="Click here to upload files" />
       </label>
       {dragActive &&
         <div
@@ -96,7 +98,7 @@ const FileDragAndDrop = ({ onFilesAdded, children, formats = ["webm", "mp4"], mu
           onDragEnter={handleDrag}
           onDragLeave={handleDrag}
           onDragOver={handleDrag}
-          onDrop={handleDrop} />
+          data-testid="drop-overlay" />
       }
     </div>
   );
