@@ -16,7 +16,7 @@ const MockFileDragAndDrop = () => (
   </FileDragAndDrop>
 );
 
-describe("Drag visual feedback", () => {
+describe("File Drag and Drop visual feedback", () => {
   it("Should provide visual feedback when dragging", () => {
     const { getByTestId } = render(
       <MockFileDragAndDrop />

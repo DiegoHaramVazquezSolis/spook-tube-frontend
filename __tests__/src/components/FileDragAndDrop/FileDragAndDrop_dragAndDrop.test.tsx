@@ -23,14 +23,6 @@ const MockFileDragAndDrop = () => (
   </FileDragAndDrop>
 );
 
-const renderAndReturnInput = () => {
-  const { getByLabelText } = render(
-    <MockFileDragAndDrop />
-  );
-
-  return getByLabelText(/Click here to upload files/i);
-}
-
 const renderAndReturnDropArea = () => {
   const { getByTestId } = render(
     <MockFileDragAndDrop />
