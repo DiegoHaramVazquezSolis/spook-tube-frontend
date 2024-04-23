@@ -1,7 +1,6 @@
 # SpookTube clone
 
-![image](https://github.com/DiegoHaramVazquezSolis/spook-tube-frontend/assets/24191578/3d917a16-60a8-427c-9c86-99edf48de54a)
-
+![image](https://github.com/DiegoHaramVazquezSolis/spook-tube-frontend/assets/24191578/62e13260-6925-4b46-85ad-df9d32c9eeda)
 
 Based on ["Content Warning"](https://store.steampowered.com/app/2881650/Content_Warning/) game.
 
