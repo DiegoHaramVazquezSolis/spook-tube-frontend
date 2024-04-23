@@ -13,6 +13,7 @@
     "testServices": "jest __tests__/src/services"
   },
   "dependencies": {
+    "lucide-react": "^0.372.0",
     "next": "14.2.1",
     "react": "^18",
     "react-dom": "^18",
