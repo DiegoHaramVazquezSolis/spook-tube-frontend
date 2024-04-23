@@ -1,5 +1,7 @@
 import React from "react";
 
+import DisclaimerTooltip from "./DisclaimerTooltip";
+
 const Navbar = () => {
   return (
     <nav className="flex items-center justify-between px-8 py-1 bg-slate-50">
@@ -11,6 +13,8 @@ const Navbar = () => {
           TUBE
         </p>
       </div>
+
+      <DisclaimerTooltip />
     </nav>
   );
 };
