@@ -1,4 +1,6 @@
-import React from 'react';
+import React from "react";
+
+import { DisclaimerTooltip } from "@/components/DisclaimerTooltip";
 
 const Navbar = () => {
   return (
@@ -11,8 +13,12 @@ const Navbar = () => {
           TUBE
         </p>
       </div>
+
+      <DisclaimerTooltip />
     </nav>
   );
 };
 
-export default Navbar;
+export {
+  Navbar
+};

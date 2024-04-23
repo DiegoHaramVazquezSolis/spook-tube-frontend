@@ -1,24 +1,30 @@
-'use client'
-import React from 'react';
-import { toast } from 'sonner';
+"use client"
+import React from "react";
+import { toast } from "sonner";
 
-import FileDragAndDrop from '@/components/FileDragAndDrop';
+import { uploadVideo } from "@/services/api";
+
+import { FileDragAndDrop } from "@/components/FileDragAndDrop";
 
 const UploadVideoPage = () => {
-  const uploadVideo = async (files: FileList) => {
+  const handleAddedFile = async (files: FileList) => {
     const video = Array.from(files)[0];
 
     if (video) {
+      // 10 Megabytes in Bytes
+      const maxFileSize = 10485760;
+      if (video.size > maxFileSize) {
+        return toast.error("Max video size allowed is 10 MB!");
+      }
+
       const loadingToast = toast.loading("Uploading video");
+
       try {
-        const result = await new Promise((resolve, reject) => setTimeout(() => {
-          // return reject("Something went wrong. Try again later!");
-          return resolve("Video Uploaded");
-        }, 1500));
+        const result = await uploadVideo(video);
 
         toast.dismiss(loadingToast);
 
-        toast.success(result as string, {
+        toast.success(await result.text(), {
           duration: 1250
         });
       } catch (error) {
@@ -37,7 +43,11 @@ const UploadVideoPage = () => {
         Upload Video
       </h1>
       <FileDragAndDrop
-        onUpload={uploadVideo}>
+        multiple={false}
+        noMultipleErrorMessage="Only one video can be uploaded at a time!"
+        onFilesAdded={handleAddedFile}
+        formats={["webm"]}
+        invalidFormatMessage="Only .webm files are allowed!">
         <div className="flex flex-col items-center justify-center text-2xl bg-[rgb(206,208,210)] rounded-3xl p-10 gap-6 cursor-pointer">
           <div className="w-24 h-24 bg-black flex items-center justify-center rounded-full">
             <div className="w-9 h-9 bg-[rgb(206,208,210)] rounded-full"></div>
