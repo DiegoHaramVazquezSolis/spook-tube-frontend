@@ -1,6 +1,6 @@
 import React from "react";
 
-import DisclaimerTooltip from "./DisclaimerTooltip";
+import { DisclaimerTooltip } from "@/components/DisclaimerTooltip";
 
 const Navbar = () => {
   return (

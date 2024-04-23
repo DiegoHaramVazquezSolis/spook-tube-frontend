@@ -19,4 +19,6 @@ const DisclaimerTooltip = () => {
   );
 };
 
-export default DisclaimerTooltip;
+export {
+  DisclaimerTooltip
+};
