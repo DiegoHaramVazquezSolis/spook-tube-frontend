@@ -2,6 +2,8 @@
 import React from "react";
 import { toast } from "sonner";
 
+import { uploadVideo } from "@/services/api";
+
 import { FileDragAndDrop } from "@/components/FileDragAndDrop";
 
 const UploadVideoPage = () => {
@@ -18,14 +20,11 @@ const UploadVideoPage = () => {
       const loadingToast = toast.loading("Uploading video");
 
       try {
-        const result = await new Promise((resolve, reject) => setTimeout(() => {
-          // return reject("Something went wrong. Try again later!");
-          return resolve("Video Uploaded");
-        }, 1500));
+        const result = await uploadVideo(video);
 
         toast.dismiss(loadingToast);
 
-        toast.success(result as string, {
+        toast.success(await result.text(), {
           duration: 1250
         });
       } catch (error) {
