@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import { VideoPlayer } from '@/components/VideoPlayer';
-import { VideoCommentsSection } from '@/components/VideoCommentsSection';
+import { VideoCommentsSection } from '@/components/VideoCommentsSection/VideoCommentsSection';
 
 const WatchVideoPage = ({ params: { videoId } }: { params: { videoId: string } }) => {
   const [videoSrc, setVideoSrc] = useState("");
