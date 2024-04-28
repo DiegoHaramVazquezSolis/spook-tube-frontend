@@ -39,7 +39,7 @@ const UploadVideoPage = () => {
 
   return (
     <main className="grow flex flex-col items-center justify-center gap-16">
-      <h1 className="text-3xl text-slate-950 uppercase">
+      <h1 className="text-3xl text-slate-950 uppercase tracking-wide">
         Upload Video
       </h1>
       <FileDragAndDrop
