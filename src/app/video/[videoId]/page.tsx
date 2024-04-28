@@ -1,8 +1,9 @@
 "use client"
+import { VideoPlayer } from '@/components/VideoPlayer';
 import React, { useEffect, useRef, useState } from 'react';
 
 const WatchVideoPage = ({ params: { videoId } }: { params: { videoId: string } }) => {
-  const [linkUrl, setLinkUrl] = useState("");
+  const [videoSrc, setVideoSrc] = useState("");
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -11,7 +12,7 @@ const WatchVideoPage = ({ params: { videoId } }: { params: { videoId: string } }
         setTimeout(() => resolve("https://media.w3.org/2010/05/sintel/trailer.webm"), 1000);
       });
 
-      setLinkUrl(url as string);
+      setVideoSrc(url as string);
       videoRef.current?.load();
     }
 
@@ -20,18 +21,10 @@ const WatchVideoPage = ({ params: { videoId } }: { params: { videoId: string } }
 
   return (
     <main className="grow grid grid-cols-1 md:grid-cols-2 grid-flow-col items-center justify-center">
-      <video
-        ref={videoRef}
-        autoPlay
-        controls
-        className="h-full w-full object-fill"
-        data-testid="video-section"
-      >
-        <source
-          src={linkUrl}
-          type="video/webm"
-          />
-      </video>
+      <VideoPlayer
+        src={videoSrc}
+        videoRef={videoRef}
+      />
       <section
         className="h-full flex flex-col self-stretch"
         data-testid="comments-section"
