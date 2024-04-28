@@ -13,8 +13,10 @@ describe("Watch video", () => {
 
     const video = getByTestId("video-player");
     const comments = getByTestId("comments-section");
+    const commentInput = getByTestId("comment-input");
 
     expect(video).toBeInTheDocument();
     expect(comments).toBeInTheDocument();
+    expect(commentInput).toBeInTheDocument();
   });
 });
