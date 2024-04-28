@@ -11,7 +11,7 @@ describe("Watch video", () => {
         }} />
     );
 
-    const video = getByTestId("video-section");
+    const video = getByTestId("video-player");
     const comments = getByTestId("comments-section");
 
     expect(video).toBeInTheDocument();
