@@ -4,7 +4,7 @@ import { DisclaimerTooltip } from "@/components/DisclaimerTooltip";
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between px-8 py-1 bg-slate-50">
+    <nav className="flex items-center justify-between px-8 py-1 bg-slate-50 h-14">
       <div className="flex items-center gap-2.5">
         <p className="text-2xl font-semibold text-slate-950 tracking-wider">
           SPÖÖK

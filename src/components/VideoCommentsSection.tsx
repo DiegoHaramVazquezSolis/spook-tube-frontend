@@ -8,7 +8,7 @@ const VideoCommentsSection = () => {
       data-testid="comments-section"
     >
       <div className="grow flex flex-col pl-1.5 pt-1.5 gap-4">
-        <h3 className="text-2xl uppercase text-slate-950 tracking-wide">
+        <h3 className="text-2xl uppercase text-slate-950 tracking-wide h-8">
           Comments
         </h3>
         <ScrollArea.Root>
