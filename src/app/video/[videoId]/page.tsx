@@ -23,7 +23,7 @@ const WatchVideoPage = ({ params: { videoId } }: { params: { videoId: string } }
 
   return (
     <main
-      className="grow grid grid-cols-1 md:grid-cols-2 grid-flow-col items-center justify-center overflow-hidden max-h-[cacl(100vh-56px)]"
+      className="relative grow grid grid-cols-1 md:grid-cols-2 items-center justify-center overflow-hidden max-h-[calc(100vh-56px)]"
     >
       <VideoPlayer
         src={videoSrc}

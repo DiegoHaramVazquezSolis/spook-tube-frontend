@@ -6,7 +6,7 @@ import { CreateCommentInput } from "@/components/VideoCommentsSection/CreateComm
 const VideoCommentsSection = () => {
   return (
     <section
-      className="h-full flex flex-col"
+      className="absolute bottom-0 top-auto left-0 right-0 h-1/3 flex flex-col md:relative md:h-full"
       data-testid="comments-section"
     >
       <VideoCommentsList />

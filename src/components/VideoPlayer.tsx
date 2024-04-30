@@ -11,7 +11,7 @@ const VideoPlayer = ({ src, videoRef }: VideoPlayerProps) => {
       ref={videoRef}
       autoPlay
       controls
-      className="h-full w-full object-fill"
+      className="h-full w-full object-cover"
       data-testid="video-player"
     >
       <source
