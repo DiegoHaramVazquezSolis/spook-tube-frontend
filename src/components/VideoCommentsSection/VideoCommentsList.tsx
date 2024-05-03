@@ -9,9 +9,9 @@ const VideoCommentsList = () => {
       <h3 className="text-xl uppercase text-slate-50 md:text-slate-950 tracking-wide h-7 pl-1.5 mb-4">
         Comments
       </h3>
-      <Root className="max-h-[18%] md:max-h-full md:grow pl-1.5">
-        {/* Screen height - Navbar height - "Comments" title height - "Add a comment" component height - top padding  */}
-        <Viewport className="max-h-full md:max-h-[calc(100vh-56px-28px-48px-6px)]">
+      <Root className="h-[20vh] md:max-h-full md:grow pl-1.5">
+        {/* Screen height - Navbar height - "Comments" title height - "Add a comment" component height - top padding */}
+        <Viewport className="h-full md:max-h-[calc(100vh-56px-28px-48px-6px)]">
         </Viewport>
         <Scrollbar orientation="vertical">
           <Thumb />
